@@ -1,0 +1,6 @@
+LOCAL_DIR="/home/user/Desktop/Inzheneria/"
+REMOTE_USER="user"
+REMOTE_HOST="192.168.0.8"
+REMOTE_DIR="f:/example/"
+EXCLUDE_FILE="/home/user/exclude-list.txt"
+rsync -avz --progress --exclude-from="$EXCLUDE_FILE" -e ssh "$LOCAL_DIR" "$REMOTE_USER@$REMOTE_HOST:\"$REMOTE_DIR\""

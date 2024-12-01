@@ -1,0 +1,7 @@
+#скрипт для PowerShell
+$date = Get-Date -Format "yyyy-MM-dd" 
+ssh user@192.168.0.8 "tar -czf /home/user/Desktop/Inzheneria/backup_$date.tar.gz -C /home/user/Desktop/Inzheneria ."
+$date = Get-Date -Format "yyyy-MM-dd" 
+scp user@192.168.0.8:/home/user/Desktop/Inzheneria/backup_$date.tar.gz "f:\example\backup_$date.tar.gz"
+$date = Get-Date -Format "yyyy-MM-dd"
+tar -xzf "f:\example\backup_$date.tar.gz" -C "f:\example\extracted"
